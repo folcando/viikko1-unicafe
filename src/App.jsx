@@ -3,6 +3,10 @@ import { useState } from 'react'
 const Statistics = ({good, neutral, bad}) => {
   const total = good + neutral + bad
 
+  if (total === 0) {
+    return <p>No feedback given</p>
+  }
+
   return (
     <div>
       <h1>statistics</h1>
@@ -27,7 +31,7 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
-  const addGood = () => {
+  const addGood = () => {     //demonstration
     setGood(good + 1)
   }
 
